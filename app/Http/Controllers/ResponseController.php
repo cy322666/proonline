@@ -17,7 +17,7 @@ class ResponseController extends Controller
 
         Artisan::call('app:change-response', [
             'user_id' => $request->user,
-            'company_id' => explode('_', $request->document_id[2])[1],
+            'company_id' => $request->company,
         ]);
     }
 
