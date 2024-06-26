@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Bitrix24\Bitrix24API;
 use App\Models\Response;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class ChangeResponse extends Command
 {
@@ -29,6 +30,11 @@ class ChangeResponse extends Command
     {
         $userId = $this->argument('user_id');
         $companyId = $this->argument('company_id');
+
+        Log::info(__METHOD__, [
+            'user_id' => $userId,
+            'company_id' => $companyId,
+        ]);
 
         $bx24 = new Bitrix24API('https://crm.pro-online.ru/rest/1/eu2xzb8lvgpu5o2m/');
 
