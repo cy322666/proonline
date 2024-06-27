@@ -26,8 +26,8 @@ class ResponseController extends Controller
         if ($userId && $companyId)
 
             Artisan::call('app:change-response', [
-                'user_id' => explode('_', $request->user)[1],
-                'company_id' => $request->company,
+                'user_id' => $userId,
+                'company_id' => $companyId,
             ]);
     }
 
