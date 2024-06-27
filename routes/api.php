@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('company/response', '\App\Http\Controllers\ResponseController@company');
 
-Route::post('company/cron', '\App\Http\Controllers\ResponseController@cron');
+Route::get('company/cron', '\App\Http\Controllers\ResponseController@cron');
