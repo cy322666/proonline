@@ -14,7 +14,7 @@ class BreakResponsible extends Command
      *
      * @var string
      */
-    protected $signature = 'app:break-responsible';
+    protected $signature = 'app:break-response';
 
     /**
      * The console command description.
