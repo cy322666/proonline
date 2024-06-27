@@ -15,10 +15,15 @@ class ResponseController extends Controller
     {
         Log::info(__METHOD__, $request->toArray());
 
-        Artisan::call('app:change-response', [
-            'user_id' => $request->user,
-            'company_id' => $request->company,
-        ]);
+        $userId = explode('_', $request->user)[1];
+        $companyId = explode('_', $request->company)[1];
+
+        if ($userId && $companyId)
+
+            Artisan::call('app:change-response', [
+                'user_id' => explode('_', $request->user)[1],
+                'company_id' => $request->company,
+            ]);
     }
 
     public function cron()
