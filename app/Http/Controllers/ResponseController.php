@@ -18,6 +18,11 @@ class ResponseController extends Controller
         $userId = explode('_', $request->user)[1];
         $companyId = explode('_', $request->company)[1];
 
+        Log::info(__METHOD__, [
+            'user_id' => $userId,
+            'company_id' => $companyId,
+        ]);
+
         if ($userId && $companyId)
 
             Artisan::call('app:change-response', [
